@@ -1,13 +1,13 @@
 th {
     background-color: #dddddd;
-    min-width: 160px;
+    min-width: 140px;
     max-width: 500px;
     text-align: center;
 }
 
 td {
     background-color: #eeeeff;
-    min-width: 160px;
+    min-width: 140px;
     max-width: 500px;
     text-align: center;
 }

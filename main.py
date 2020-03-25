@@ -32,18 +32,12 @@ class LoginForm(FlaskForm):
     submit = SubmitField("Enter")
 
 
-class AddNews(FlaskForm):
-    title = StringField("Title", validators=[DataRequired()])
-    content = TextAreaField("Content", validators=[DataRequired()])
-    is_private = BooleanField("Is it private?", validators=[DataRequired()])
-    submit = SubmitField("Submit")
-
-
 class AddJob(FlaskForm):
     title = StringField("Job Title", validators=[DataRequired()])
     team_leader = StringField("Team Leader id", validators=[DataRequired()])
     work_size = StringField("Work Size", validators=[DataRequired()])
     collaborators = StringField("Collaborators", validators=[DataRequired()])
+    hazard_category = StringField("Hazard category", validators=[DataRequired()])
     is_finished = BooleanField("Is job finished")
     submit = SubmitField("Submit")
 
@@ -125,6 +119,7 @@ def add_job():
                 job=form.title.data,
                 work_size=int(form.work_size.data),
                 collaborators=form.collaborators.data,
+                hazard_category=int(form.hazard_category.data),
                 is_finished=form.is_finished.data
             )
             session.add(job)
@@ -149,6 +144,7 @@ def edit_job(id):
             form.team_leader.data = jobs.team_leader
             form.work_size.data = jobs.work_size
             form.collaborators.data = jobs.collaborators
+            form.hazard_category.data = jobs.hazard_category
             form.is_finished.data = jobs.is_finished
         else:
             abort(404)
@@ -161,6 +157,7 @@ def edit_job(id):
             jobs.team_leader = form.team_leader.data
             jobs.work_size = form.work_size.data
             jobs.collaborators = form.collaborators.data
+            jobs.hazard_category = int(form.hazard_category.data)
             jobs.is_finished = form.is_finished.data
             session.commit()
             return redirect('/')

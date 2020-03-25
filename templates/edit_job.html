@@ -41,6 +41,15 @@
             </div>
         {% endfor %}
     </p>
+    <p>
+        {{ form.hazard_category.label }}
+        {{ form.hazard_category(class="form-control") }}<br>
+        {% for error in form.hazard_category.errors %}
+            <div class="alert alert-danger" role="alert">
+                {{ error }}
+            </div>
+        {% endfor %}
+    </p>
     <p>{{ form.is_finished() }} {{ form.is_finished.label }}</p>
     <p>{{ form.submit(type="submit", class="bth bth-primary") }}</p>
 </form>
