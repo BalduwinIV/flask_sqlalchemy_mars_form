@@ -16,12 +16,12 @@
             <a class="navbar-brand" href="/logout">{{ current_user.name }}</a>
         {% else %}
             <p>
-                <a class="btn btn-primary" href="/register">Зарегистрироваться</a>
-                <a class="btn btn-success" href="/login">Войти</a>
+                <a class="btn btn-primary" href="/register">Register</a>
+                <a class="btn btn-success" href="/login">Log in</a>
             </p>
         {% endif %}
-        <h1 style="color: #111111">Миссия Колонизация Марса</h1>
-        <h4 style="opacity: 0.5">И на Марсе будут яблони цвести!</h4>
+        <h1 style="color: #111111">Mars Mission</h1>
+        <h4 style="opacity: 0.5">Mars, we are coming!</h4>
     </div>
     <div style="display: block;margin-left: auto;margin-right: auto;max-width: 800px;">
         {% block content %}{% endblock %}
