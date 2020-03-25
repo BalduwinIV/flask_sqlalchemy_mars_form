@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Edit job {{ id }}</h2>
+<form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    {{ form.csrf_token }}
+    <p>
+        {{ form.title.label }}
+        {{ form.title(class="form-control", type="text") }}
+        {% for error in form.title.errors %}
+            <div class="alert alert-danger" role="alert">
+                {{ error }}
+            </div>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.team_leader.label }}
+        {{ form.team_leader(class="form-control", type="text") }}
+        {% for error in form.team_leader.errors %}
+            <div class="alert alert-danger" role="alert">
+                {{ error }}
+            </div>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.work_size.label }}
+        {{ form.work_size(class="form-control", type="text") }}
+        {% for error in form.work_size.errors %}
+            <div class="alert alert-danger" role="alert">
+                {{ error }}
+            </div>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.collaborators.label }}
+        {{ form.collaborators(class="form-control", type="text") }}
+        {% for error in form.collaborators.errors %}
+            <div class="alert alert-danger" role="alert">
+                {{ error }}
+            </div>
+        {% endfor %}
+    </p>
+    <p>{{ form.is_finished() }} {{ form.is_finished.label }}</p>
+    <p>{{ form.submit(type="submit", class="bth bth-primary") }}</p>
+</form>
+{% endblock %}

@@ -1,0 +1,17 @@
+th {
+    background-color: #dddddd;
+    min-width: 160px;
+    max-width: 500px;
+    text-align: center;
+}
+
+td {
+    background-color: #eeeeff;
+    min-width: 160px;
+    max-width: 500px;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
